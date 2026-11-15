@@ -1,0 +1,12 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Find one manageable next step when life feels like a lot."><meta name="theme-color" content="#183e2d"><title>IGNITE · What still fits?</title></head>
+<body><script>
+  try {
+    const settings = JSON.parse(localStorage.getItem('ignite-veritas-v1') || '{}').settings;
+    const theme = settings?.theme;
+    document.documentElement.dataset.theme = theme === 'light' || theme === 'dark' ? theme : 'system';
+    document.documentElement.dataset.textSize = settings?.textSize === 'large' ? 'large' : 'standard';
+  } catch { document.documentElement.dataset.theme = 'system'; }
+</script><div id="root"></div><script type="module" src="/src/main.tsx"></script></body>
+</html>

@@ -1,0 +1,83 @@
+{
+  "counts": {
+    "train": {
+      "neutral": 12823,
+      "anger": 1025,
+      "sadness": 817,
+      "disappointment": 709,
+      "nervousness": 85
+    },
+    "dev": {
+      "neutral": 1592,
+      "sadness": 84,
+      "anger": 109,
+      "disappointment": 91,
+      "nervousness": 8
+    },
+    "test": {
+      "sadness": 102,
+      "neutral": 1606,
+      "disappointment": 88,
+      "anger": 131,
+      "nervousness": 12
+    }
+  },
+  "test_n": 1939,
+  "baseline_label": "neutral",
+  "baseline": {
+    "macro_f1": 0.18121297602256697,
+    "by_label": {
+      "anger": {
+        "fp": 0,
+        "fn": 131
+      },
+      "disappointment": {
+        "fp": 0,
+        "fn": 88
+      },
+      "nervousness": {
+        "fp": 0,
+        "fn": 12
+      },
+      "neutral": {
+        "fp": 333,
+        "fn": 0
+      },
+      "sadness": {
+        "fp": 0,
+        "fn": 102
+      }
+    }
+  },
+  "classifier": {
+    "macro_f1": 0.5344246342883682,
+    "by_label": {
+      "anger": {
+        "fp": 79,
+        "fn": 48
+      },
+      "disappointment": {
+        "fp": 124,
+        "fn": 54
+      },
+      "nervousness": {
+        "fp": 8,
+        "fn": 8
+      },
+      "neutral": {
+        "fp": 106,
+        "fn": 234
+      },
+      "sadness": {
+        "fp": 59,
+        "fn": 32
+      }
+    }
+  },
+  "failure": {
+    "id": "ed9tl7w",
+    "actual": "neutral",
+    "predicted": "anger",
+    "text": "You take that back right now! [NAME] does not deserve this."
+  }
+}

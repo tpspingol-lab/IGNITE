@@ -1,0 +1,15 @@
+{
+  "id": "./",
+  "name": "IGNITE",
+  "short_name": "IGNITE",
+  "description": "Choose one manageable next step and reflect on everyday well-being.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f7f3e9",
+  "theme_color": "#183e2d",
+  "icons": [
+    { "src": "./ignite-icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable" },
+    { "src": "./ignite-icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ]
+}

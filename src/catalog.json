@@ -1,0 +1,30 @@
+{
+  "apple": {
+    "id": 2709215,
+    "kcal": 61.0,
+    "protein": 0.17,
+    "carbs": 14.8,
+    "fat": 0.15
+  },
+  "banana": {
+    "id": 2709224,
+    "kcal": 97.0,
+    "protein": 0.74,
+    "carbs": 22.7,
+    "fat": 0.28
+  },
+  "pancakes": {
+    "id": 2708304,
+    "kcal": 282,
+    "protein": 7.41,
+    "carbs": 35.3,
+    "fat": 12.1
+  },
+  "ice cream": {
+    "id": 2705630,
+    "kcal": 207,
+    "protein": 3.5,
+    "carbs": 23.6,
+    "fat": 11.0
+  }
+}

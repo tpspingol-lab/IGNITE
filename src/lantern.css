@@ -1,0 +1,101 @@
+.app-shell .lantern-launcher {
+  --lantern-bottom: 16px;
+  --lantern-left: 232px;
+  position: fixed;
+  right: 14px;
+  bottom: var(--lantern-bottom);
+  z-index: 9;
+}
+
+.app-shell .lantern-launcher.dock-left {
+  left: var(--lantern-left);
+  right: auto;
+}
+
+.app-shell .lantern-launcher .lantern-float {
+  position: static;
+  display: grid;
+  justify-items: center;
+  align-content: end;
+  gap: 1px;
+  width: 86px;
+  min-height: 44px;
+  border-radius: 12px;
+  padding: 1px;
+}
+
+.lantern-label, .lantern-cue {
+  background: var(--surface);
+  color: var(--text);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  font: 600 .73rem/1.15 system-ui, sans-serif;
+}
+
+.lantern-label {
+  padding: .35em .45em;
+}
+
+.lantern-launcher[data-art='false'] .lantern-label {
+  display: grid;
+  min-height: 44px;
+  place-items: center;
+  width: 100%;
+}
+
+.lantern-cue {
+  position: absolute;
+  bottom: 100%;
+  right: 0;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 7px;
+  width: max-content;
+  max-width: 190px;
+  box-shadow: 0 4px 16px #17221b24;
+}
+
+.lantern-launcher.dock-left .lantern-cue { right: auto; left: 0; }
+.lantern-cue:has(button) { padding-block: 0; padding-inline-end: 0; }
+.lantern-cue button { border: 0; padding: 0; min-width: 44px; font-size: 1rem; }
+.lantern-launcher[data-dragging='true'] .lantern-cue { display: none; }
+
+.app-shell .lantern-float .lantern-art { transform-origin: center 95%; }
+.app-shell .lantern-float[data-intro='true'] .lantern-art { animation: lantern-welcome 960ms ease-in-out both; }
+.app-shell .lantern-float:hover .lantern-art::before { transform: rotate(9deg); }
+.app-shell .lantern-float[aria-expanded='true'] .lantern-art { transform: rotate(-6deg); }
+.app-shell .lantern-chat { bottom: 104px; animation: lantern-chat-in 140ms ease-out; }
+
+@keyframes lantern-welcome {
+  0%, 100% { transform: translateY(0) rotate(0); }
+  16% { transform: translateY(-10px) rotate(-9deg); }
+  37% { transform: translateY(0) rotate(5deg); }
+  53% { transform: translateY(-7px) rotate(8deg); }
+  76% { transform: translateY(0) rotate(-4deg); }
+}
+
+@keyframes lantern-chat-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (min-width: 651px) {
+  .app-shell .lantern-chat[data-dock='left'] { left: 232px; right: auto; }
+}
+
+@media (max-width: 650px) {
+  .app-shell .lantern-launcher {
+    --lantern-bottom: calc(var(--mobile-nav-clearance, 80px) + env(safe-area-inset-bottom));
+    --lantern-left: 6px;
+    right: 6px;
+  }
+  .app-shell .lantern-chat { bottom: calc(var(--mobile-nav-clearance, 80px) + env(safe-area-inset-bottom)); max-height: calc(100dvh - var(--mobile-nav-clearance, 80px) - env(safe-area-inset-bottom) - 12px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .app-shell .lantern-float:hover .lantern-art::before,
+  .app-shell .lantern-float[aria-expanded='true'] .lantern-art { transform: none; }
+}
+.static-motion .lantern-float:hover .lantern-art::before,
+.static-motion .lantern-float[aria-expanded='true'] .lantern-art { transform: none; }
